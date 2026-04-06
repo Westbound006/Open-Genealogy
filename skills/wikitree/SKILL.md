@@ -7,7 +7,7 @@ description: >-
 license: MIT
 compatibility: Claude Code
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   api: WikiTree API (read-only, public profiles)
   api_endpoint: https://api.wikitree.com/api.php
 ---
@@ -91,7 +91,7 @@ authentication and display only what the API returned.
 Fetch the ancestor tree from a starting profile.
 
 ```bash
-curl -s "https://api.wikitree.com/api.php?action=getAncestors&key=WIKITREE_ID&depth=DEPTH&fields=Id,Name,FirstName,LastNameAtBirth,Gender,BirthDate,BirthLocation,DeathDate,DeathLocation,Father,Mother&resolveRedirect=1&format=json"
+curl -s "https://api.wikitree.com/api.php?action=getPeople&keys=WIKITREE_ID&ancestors=DEPTH&fields=Id,Name,FirstName,LastNameAtBirth,Gender,BirthDate,BirthDateDecade,BirthLocation,DeathDate,DeathDateDecade,DeathLocation,Father,Mother&resolveRedirect=1&format=json"
 ```
 
 **Depth guide** (suggest these to the user):
@@ -134,8 +134,8 @@ If a parent slot is empty (Father or Mother is null/0), note:
 Fetch ancestors and flag profiles with missing or thin data that the user
 could improve or look for elsewhere.
 
-Use the same `getAncestors` call as above with depth=4 (or user's choice),
-then analyse the returned data.
+Use the same `getPeople&ancestors=` call as above with depth=4 (or user's
+choice), then analyse the returned data.
 
 **Gap criteria — flag a profile when:**
 
@@ -209,7 +209,7 @@ Never invent results.
 Fetch descendants from a starting profile.
 
 ```bash
-curl -s "https://api.wikitree.com/api.php?action=getDescendants&key=WIKITREE_ID&depth=DEPTH&fields=Id,Name,FirstName,LastNameAtBirth,Gender,BirthDate,BirthLocation,DeathDate,DeathLocation,Father,Mother&resolveRedirect=1&format=json"
+curl -s "https://api.wikitree.com/api.php?action=getPeople&keys=WIKITREE_ID&descendants=DEPTH&fields=Id,Name,FirstName,LastNameAtBirth,Gender,BirthDate,BirthDateDecade,BirthLocation,DeathDate,DeathDateDecade,DeathLocation,Father,Mother&resolveRedirect=1&format=json"
 ```
 
 Default to depth=2 (children and grandchildren). Warn before depth 4+.
@@ -224,7 +224,7 @@ but labelled "Children", "Grandchildren", etc.)
 The API returns JSON. Key things to handle:
 
 - **Status 0** = success. Data is in `profile` (getProfile/getPerson),
-  `ancestors` (getAncestors), `descendants` (getDescendants),
+  `people` (getPeople with ancestors/descendants),
   or `matches` (searchPerson).
 - **Status non-0** = error. Report the error message to the user plainly.
 - **Redirected profiles**: if `resolveRedirect=1` and the profile was
@@ -241,7 +241,7 @@ The API returns JSON. Key things to handle:
 | API response | User-facing message |
 | ------------ | ------------------- |
 | Status != 0, "not found" | "No WikiTree profile found for [ID]. Check the ID spelling — WikiTree IDs are case-sensitive (e.g. Philpott-1879)." |
-| Empty ancestors array | "No ancestors recorded in WikiTree for [ID] at this depth." |
+| Empty people array | "No ancestors recorded in WikiTree for [ID] at this depth." |
 | curl fails / no response | "Could not reach the WikiTree API. Check your internet connection." |
 | Private profile | "This profile is private. Only the profile manager or trusted list members can view full details." |
 
