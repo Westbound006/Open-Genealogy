@@ -121,7 +121,7 @@ Requires [Claude Code](https://claude.ai/code).
 
 | Folder | Description | Status |
 | ------ | ----------- | ------ |
-| [gra/](skills/gra/) | GPS-aligned genealogical research assistant (v8.5.1c + full + companion) | **new** |
+| [gra/](skills/gra/) | GPS-aligned genealogical research assistant (v8.5.1c + full + companion) | stable |
 | [gedcom-creator/](skills/gedcom-creator/) | GEDCOM 5.5.1 file generator from natural language, JSON, or markdown | stable |
 
 ---
@@ -154,6 +154,110 @@ Requires [Claude Code](https://claude.ai/code).
 | [genealogical-writing-rubric.md](benchmark/rubrics/genealogical-writing-rubric.md) | GPS-derived 60-point rubric for evaluating published genealogical writing |
 | [benchmark/](benchmark/) | Framework overview, methodology, and case study invitations |
 | [ashe-county-nc/](benchmark/case-studies/ashe-county-nc/) | Case study: Claude, ChatGPT, Gemini, Grok on Ashe County research |
+
+---
+
+## Autonomous Research Prompts
+
+12 Claude Code workflows for structured autonomous research. Each defines a goal, search strategy, and verification steps.
+
+| File | Description |
+|------|-------------|
+| [01-tree-expansion.md](prompts/01-tree-expansion.md) | Expand the family tree by finding new ancestors |
+| [02-cross-reference-audit.md](prompts/02-cross-reference-audit.md) | Audit and resolve cross-reference discrepancies |
+| [03-findagrave-sweep.md](prompts/03-findagrave-sweep.md) | Locate burial records via Find a Grave |
+| [04-gedcom-completeness.md](prompts/04-gedcom-completeness.md) | Identify gaps in a GEDCOM file |
+| [05-source-citation-audit.md](prompts/05-source-citation-audit.md) | Audit source citations for completeness |
+| [06-unresolved-persons.md](prompts/06-unresolved-persons.md) | Work through unidentified individuals |
+| [07-timeline-gap-analysis.md](prompts/07-timeline-gap-analysis.md) | Find and fill timeline gaps |
+| [08-open-question-resolution.md](prompts/08-open-question-resolution.md) | Systematically resolve open research questions |
+| [09-bygdebok-extraction.md](prompts/09-bygdebok-extraction.md) | Extract data from Norwegian farm books |
+| [10-colonial-records-search.md](prompts/10-colonial-records-search.md) | Search colonial American records |
+| [11-immigration-search.md](prompts/11-immigration-search.md) | Trace immigration and emigration records |
+| [12-dna-chromosome-analysis.md](prompts/12-dna-chromosome-analysis.md) | Analyse DNA chromosome painting results |
+
+---
+
+## Workflows
+
+Step-by-step procedures for common research tasks.
+
+| File | Description |
+|------|-------------|
+| [getting-started.md](workflows/getting-started.md) | Set up your vault and run your first research session |
+| [new-ancestor-intake.md](workflows/new-ancestor-intake.md) | Process a newly discovered ancestor |
+| [discrepancy-resolution.md](workflows/discrepancy-resolution.md) | Resolve conflicts between sources |
+| [document-triage.md](workflows/document-triage.md) | Triage and prioritise incoming documents |
+| [ocr-pipeline.md](workflows/ocr-pipeline.md) | OCR and transcription pipeline |
+| [oral-history-protocol.md](workflows/oral-history-protocol.md) | Record and integrate oral histories |
+| [phase-planning.md](workflows/phase-planning.md) | Plan a research phase with defined goals |
+
+---
+
+## Archives — Regional Record Guides
+
+Where to find records by country and region. Notes on free vs. subscription access.
+
+| File | Region |
+|------|--------|
+| [england-wales.md](archives/england-wales.md) | England & Wales |
+| [scotland.md](archives/scotland.md) | Scotland |
+| [ireland.md](archives/ireland.md) | Ireland |
+| [france.md](archives/france.md) | France |
+| [germany.md](archives/germany.md) | Germany |
+| [austria.md](archives/austria.md) | Austria |
+| [hungary.md](archives/hungary.md) | Hungary |
+| [netherlands.md](archives/netherlands.md) | Netherlands |
+| [norway.md](archives/norway.md) | Norway |
+| [sweden.md](archives/sweden.md) | Sweden |
+| [poland.md](archives/poland.md) | Poland |
+| [russia-ukraine.md](archives/russia-ukraine.md) | Russia & Ukraine |
+| [spain-portugal.md](archives/spain-portugal.md) | Spain & Portugal |
+| [italy.md](archives/italy.md) | Italy |
+| [jewish-genealogy.md](archives/jewish-genealogy.md) | Jewish genealogy (cross-national) |
+| [african-american.md](archives/african-american.md) | African American records |
+| [usa-census.md](archives/usa-census.md) | USA — Census |
+| [usa-vital-records.md](archives/usa-vital-records.md) | USA — Vital records |
+| [usa-immigration.md](archives/usa-immigration.md) | USA — Immigration |
+| [usa-colonial.md](archives/usa-colonial.md) | USA — Colonial records |
+| [canada.md](archives/canada.md) | Canada |
+| [mexico-latin-america.md](archives/mexico-latin-america.md) | Mexico & Latin America |
+| [australia-nz.md](archives/australia-nz.md) | Australia & New Zealand |
+
+---
+
+## Vault Template
+
+Obsidian-compatible markdown templates for organising research. Works with any text editor.
+
+| File | Description |
+|------|-------------|
+| [_Index.md](vault-template/_Index.md) | Master index for your research vault |
+| [Family_Tree.md](vault-template/Family_Tree.md) | Family tree overview |
+| [Research_Log.md](vault-template/Research_Log.md) | Dated log of research sessions |
+| [Research_Strategy.md](vault-template/Research_Strategy.md) | Current research strategy and priorities |
+| [Open_Questions.md](vault-template/Open_Questions.md) | Tracked open research questions |
+| [Unresolved_Persons.md](vault-template/Unresolved_Persons.md) | Individuals not yet placed in the tree |
+| [Timeline.md](vault-template/Timeline.md) | Chronological event timeline |
+| [Data_Inventory.md](vault-template/Data_Inventory.md) | Inventory of sources and documents held |
+| [Witness_Network.md](vault-template/Witness_Network.md) | FAN cluster tracking |
+| [Genetic_Profile.md](vault-template/Genetic_Profile.md) | DNA test results and interpretation |
+| [Chromosome_Painting.md](vault-template/Chromosome_Painting.md) | Chromosome segment mapping |
+| [vault-template/templates/](vault-template/templates/) | Per-person, transcription, certificate templates |
+
+---
+
+## Examples
+
+Anonymised worked examples showing research patterns and decision-making.
+
+| File | Demonstrates |
+|------|-------------|
+| [tree-expansion-session.md](examples/tree-expansion-session.md) | Tree expansion over 8 iterations |
+| [cross-reference-audit.md](examples/cross-reference-audit.md) | Finding and resolving discrepancies |
+| [dna-to-genealogy-mapping.md](examples/dna-to-genealogy-mapping.md) | Connecting DNA results to documented lines |
+| [name-resolution.md](examples/name-resolution.md) | One ancestor appearing under multiple names |
+| [colonial-deep-dive.md](examples/colonial-deep-dive.md) | Researching a colonial American ancestor |
 
 ---
 
