@@ -123,6 +123,7 @@ Requires [Claude Code](https://claude.ai/code).
 | ------ | ----------- | ------ |
 | [gra/](skills/gra/) | GPS-aligned genealogical research assistant (v8.5.1c + full + companion) | stable |
 | [gedcom-creator/](skills/gedcom-creator/) | GEDCOM 5.5.1 file generator from natural language, JSON, or markdown | stable |
+| [wikitree/](skills/wikitree/) | WikiTree profile lookup, ancestor explorer, research gap finder, person search | stable |
 
 ---
 

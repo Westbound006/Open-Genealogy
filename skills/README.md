@@ -12,6 +12,7 @@ platform-agnostic prompts, see [Assistants](../assistants/).
 | ----- | ----------- | ------ |
 | [gra/](gra/) | GPS-aligned genealogical research assistant | stable |
 | [gedcom-creator/](gedcom-creator/) | GEDCOM 5.5.1 file generator | stable |
+| [wikitree/](wikitree/) | WikiTree profile lookup, ancestor explorer, gap finder | stable |
 
 ## Installation
 
@@ -20,6 +21,7 @@ Copy a skill folder to your Claude Code skills directory:
 ```bash
 cp -r skills/gra ~/.claude/skills/gra
 cp -r skills/gedcom-creator ~/.claude/skills/gedcom-creator
+cp -r skills/wikitree ~/.claude/skills/wikitree
 ```
 
 Then restart Claude Code. The skill will be available via
