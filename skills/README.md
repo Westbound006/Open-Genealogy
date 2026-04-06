@@ -10,7 +10,7 @@ platform-agnostic prompts, see [Assistants](../assistants/).
 
 | Skill | Description | Status |
 | ----- | ----------- | ------ |
-| [gra/](gra/) | GPS-aligned genealogical research assistant | **new** |
+| [gra/](gra/) | GPS-aligned genealogical research assistant | stable |
 | [gedcom-creator/](gedcom-creator/) | GEDCOM 5.5.1 file generator | stable |
 
 ## Installation
@@ -18,6 +18,7 @@ platform-agnostic prompts, see [Assistants](../assistants/).
 Copy a skill folder to your Claude Code skills directory:
 
 ```bash
+cp -r skills/gra ~/.claude/skills/gra
 cp -r skills/gedcom-creator ~/.claude/skills/gedcom-creator
 ```
 

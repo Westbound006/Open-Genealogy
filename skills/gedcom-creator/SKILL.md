@@ -45,6 +45,7 @@ GEDCOM file from genealogical data. Trigger phrases:
 - "turn this into a GEDCOM"
 - "export this as GEDCOM"
 - "make a .ged file"
+- user uploads a document, photo, pedigree chart, or headstone image and asks to create a family tree file
 
 Do NOT auto-invoke for GEDCOM reading, analysis, or visualization.
 
@@ -534,7 +535,8 @@ wills, census pages) that exceeds a single prompt:
 5. **Generate once at the end** with all batch files:
 
 ```bash
-python scripts/gedcom_builder.py batch-01.json batch-02.json \
+python ~/.claude/skills/gedcom-creator/scripts/gedcom_builder.py \
+  batch-01.json batch-02.json \
   --output parish-register.ged --submitter "User Name"
 ```
 
@@ -651,7 +653,10 @@ gedcom-creator/
   README.md             — Installation and usage guide
   scripts/
     gedcom_builder.py   — Python companion script (MIT license)
+    test_gedcom_builder.py — Test suite
   examples/
-    sample-input.json   — Example structured input
-    expected-output.ged — Known-good output for regression testing
+    sample-input.json              — Example structured input
+    expected-output.ged            — Known-good output for regression testing
+    parish-register-whitchurch.json — Parish register example (complex, recycled names)
+    parish-register-whitchurch.ged  — Known-good output for parish register example
 ```
